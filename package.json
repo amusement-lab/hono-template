@@ -6,7 +6,9 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.14.1",
-    "hono": "^4.7.7"
+    "@hono/zod-openapi": "^0.19.5",
+    "hono": "^4.7.7",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
