@@ -1,6 +1,6 @@
 class NoteClass {
   static async getAllNote() {
-    return [{ title: "Eating Burger", status: true, amount: 2, price: 20 }]
+    return [{ title: "Buy Raw Chicken", status: true, amount: 2, price: 300000 }]
   }
 }
 
