@@ -1,8 +1,7 @@
-import { Hono } from 'hono'
 import { createRoute, OpenAPIHono } from '@hono/zod-openapi'
 
-import TodoClass from './todo.service.ts'
-import { TodoSchema } from './todo.entity.ts'
+import { NoteClass } from './note.service.ts'
+import { NoteSchema } from './note.entity.ts'
 
 const app = new OpenAPIHono()
 
@@ -14,15 +13,15 @@ app.openapi(
       200: {
         content: {
           'application/json': {
-            schema: TodoSchema,
+            schema: NoteSchema,
           },
         },
-        description: 'Retrieve the user',
+        description: '',
       },
     },
   }), async (c) => {
-    const todo = await TodoClass.getAllTodo()
-    return c.json(todo)
+    const note = await NoteClass.getAllNote()
+    return c.json(note)
   })
 
 export default app
