@@ -1,6 +1,6 @@
 import { OpenAPIHono } from '@hono/zod-openapi'
 
-import { NoteClass } from './note.service.ts'
+import { NoteService } from './note.service.ts'
 import { NoteSchema } from './note.entity.ts'
 import { CreateRouteUtil } from '../../utils/route.util.ts'
 
@@ -15,7 +15,7 @@ app.openapi(
     responseSchema: NoteSchema
   }),
   async (c) => {
-    const note = await NoteClass.getAllNote()
+    const note = await NoteService.getAllNote()
     return c.json(note)
   })
 
