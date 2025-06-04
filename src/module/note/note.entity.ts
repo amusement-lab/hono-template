@@ -1,12 +1,15 @@
 import { z } from '@hono/zod-openapi'
 
-const NoteSchema = z.array(
-  z.object({
-    title: z.string(),
-    status: z.boolean(),
-    amount: z.number().optional(),
-    price: z.number()
-  }))
-  .openapi('Note')
+export const NoteSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  status: z.boolean(),
+  amount: z.number().optional(),
+  price: z.number()
+}).openapi('Note')
 
-export { NoteSchema }
+export const NotesSchema = z.array(NoteSchema).openapi('Notes');
+
+export type Note = z.infer<typeof NoteSchema>;
+
+export type Notes = z.infer<typeof NotesSchema>;
