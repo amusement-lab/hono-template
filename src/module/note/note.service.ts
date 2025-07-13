@@ -1,4 +1,4 @@
-import { type Note, type Notes } from './note.entity.ts'
+import { type Note, type Notes, type NoteUpdate } from './note.entity.ts'
 
 const noteArray: Notes = [
   { id: '1', title: "Buy Raw Chicken", status: true, amount: 2, price: 300000 },
@@ -14,14 +14,38 @@ class NoteService {
 
   static async getNoteById(id: string) {
     const note = noteArray.find((note) => note.id === id)
+
     if (!note) throw new Error('Note not found')
+
     return note
   }
 
   static async createNote(note: Note) {
     const newNote = { ...note, id: Math.random().toString() }
+
     noteArray.push(newNote)
+
     return newNote
+  }
+
+  static async updateNote(id: string, updatedNote: NoteUpdate) {
+    const note = noteArray.find((note) => note.id === id)
+
+    if (!note) throw new Error('Note not found')
+
+    Object.assign(note, updatedNote)
+    return note
+  }
+
+  static async deleteNote(id: string) {
+    const note = noteArray.find((note) => note.id === id)
+
+    if (!note) throw new Error('Note not found')
+
+    const index = noteArray.indexOf(note)
+    noteArray.splice(index, 1)
+
+    return note
   }
 }
 

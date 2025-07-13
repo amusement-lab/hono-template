@@ -7,15 +7,15 @@
     "ncu:u": "ncu -u"
   },
   "dependencies": {
-    "@hono/node-server": "^1.14.3",
-    "@hono/swagger-ui": "^0.5.1",
-    "@hono/zod-openapi": "^0.19.8",
-    "hono": "^4.7.11",
-    "zod": "^3.25.46"
+    "@hono/node-server": "^1.15.0",
+    "@hono/swagger-ui": "^0.5.2",
+    "@hono/zod-openapi": "^0.19.9",
+    "hono": "^4.8.4",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/node": "^22.15.29",
+    "@types/node": "^24.0.13",
     "npm-check-updates": "^18.0.1",
-    "tsx": "^4.19.4"
+    "tsx": "^4.20.3"
   }
 }

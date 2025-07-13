@@ -14,7 +14,7 @@ app.doc('/doc', {
     title: 'My API',
   },
 })
-app.get('/ui', swaggerUI({ url: '/doc' }))
+app.get('/doc-ui', swaggerUI({ url: '/doc' }))
 
 app.route('/user', user)
 app.route('/note', note)
