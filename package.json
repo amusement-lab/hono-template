@@ -14,8 +14,8 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/node": "^24.0.13",
-    "npm-check-updates": "^18.0.1",
-    "tsx": "^4.20.3"
+    "@types/node": "^24.3.0",
+    "npm-check-updates": "^18.0.3",
+    "tsx": "^4.20.5"
   }
 }
