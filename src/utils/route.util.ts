@@ -1,7 +1,6 @@
 // inspiration source : https://github.com/SyahrulBhudiF/Hono-Starter-Code/blob/master/src/route/user-route.ts
 
-import { createRoute } from "@hono/zod-openapi";
-import { z, ZodType } from "zod";
+import { createRoute, z } from "@hono/zod-openapi";
 
 class CreateRouteUtil {
   constructor(
@@ -12,8 +11,8 @@ class CreateRouteUtil {
   createRouteUtil(option: {
     method: "post" | "get" | "put" | "patch" | "delete",
     path: string,
-    responseSchema: ZodType,
-    requestSchema?: ZodType,
+    responseSchema: z.ZodType<any>, // currently use `any` before get the better type
+    requestSchema?: z.ZodType<any>, // currently use `any` before get the better type
     description?: string,
   }
   ) {
@@ -36,12 +35,12 @@ class CreateRouteUtil {
       } : {}),
       responses: {
         200: {
-          description: "Success",
           content: {
             "application/json": {
               schema: option.responseSchema,
             },
           },
+          description: "Success",
         },
         // 400: {
         //   description: "Bad Request",
