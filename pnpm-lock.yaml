@@ -16,13 +16,13 @@ importers:
         version: 0.5.2(hono@4.9.5)
       '@hono/zod-openapi':
         specifier: ^1.1.0
-        version: 1.1.0(hono@4.9.5)(zod@4.0.5)
+        version: 1.1.0(hono@4.9.5)(zod@4.1.5)
       hono:
         specifier: ^4.9.5
         version: 4.9.5
       zod:
-        specifier: 4.0.5
-        version: 4.0.5
+        specifier: 4.1.5
+        version: 4.1.5
     devDependencies:
       '@types/node':
         specifier: ^24.3.0
@@ -33,6 +33,9 @@ importers:
       tsx:
         specifier: ^4.20.5
         version: 4.20.5
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
 
 packages:
 
@@ -257,6 +260,11 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   undici-types@7.10.0:
     resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
 
@@ -265,15 +273,15 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
-  zod@4.0.5:
-    resolution: {integrity: sha512-/5UuuRPStvHXu7RS+gmvRf4NXrNxpSllGwDnCBcJZtQsKrviYXm54yDGV2KYNLT5kq0lHGcl7lqWJLgSaG+tgA==}
+  zod@4.1.5:
+    resolution: {integrity: sha512-rcUUZqlLJgBC33IT3PNMgsCq6TzLQEG/Ei/KTCU0PedSWRMAXoOUN+4t/0H+Q8bdnLPdqUYnvboJT0bn/229qg==}
 
 snapshots:
 
-  '@asteasolutions/zod-to-openapi@8.1.0(zod@4.0.5)':
+  '@asteasolutions/zod-to-openapi@8.1.0(zod@4.1.5)':
     dependencies:
       openapi3-ts: 4.5.0
-      zod: 4.0.5
+      zod: 4.1.5
 
   '@esbuild/aix-ppc64@0.25.6':
     optional: true
@@ -361,18 +369,18 @@ snapshots:
     dependencies:
       hono: 4.9.5
 
-  '@hono/zod-openapi@1.1.0(hono@4.9.5)(zod@4.0.5)':
+  '@hono/zod-openapi@1.1.0(hono@4.9.5)(zod@4.1.5)':
     dependencies:
-      '@asteasolutions/zod-to-openapi': 8.1.0(zod@4.0.5)
-      '@hono/zod-validator': 0.7.2(hono@4.9.5)(zod@4.0.5)
+      '@asteasolutions/zod-to-openapi': 8.1.0(zod@4.1.5)
+      '@hono/zod-validator': 0.7.2(hono@4.9.5)(zod@4.1.5)
       hono: 4.9.5
       openapi3-ts: 4.5.0
-      zod: 4.0.5
+      zod: 4.1.5
 
-  '@hono/zod-validator@0.7.2(hono@4.9.5)(zod@4.0.5)':
+  '@hono/zod-validator@0.7.2(hono@4.9.5)(zod@4.1.5)':
     dependencies:
       hono: 4.9.5
-      zod: 4.0.5
+      zod: 4.1.5
 
   '@types/node@24.3.0':
     dependencies:
@@ -431,8 +439,10 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  typescript@5.9.2: {}
+
   undici-types@7.10.0: {}
 
   yaml@2.8.0: {}
 
-  zod@4.0.5: {}
+  zod@4.1.5: {}
