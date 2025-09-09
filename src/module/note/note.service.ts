@@ -1,4 +1,4 @@
-import { type Note, type Notes, type NoteUpdate } from './note.entity.ts'
+import type { Note, Notes, NoteUpdate } from './note.entity.ts'
 
 const noteArray: Notes = [
   { id: '1', title: "Buy Raw Chicken", status: true, amount: 2, price: 300000 },
