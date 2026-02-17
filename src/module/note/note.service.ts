@@ -1,3 +1,5 @@
+import { HTTPException } from 'hono/http-exception'
+
 import type { Note, Notes, NoteUpdate } from './note.entity.ts'
 
 const noteArray: Notes = [
@@ -15,7 +17,10 @@ class NoteService {
   static async getNoteById(id: string) {
     const note = noteArray.find((note) => note.id === id)
 
-    if (!note) throw new Error('Note not found')
+    if (!note) throw new HTTPException(
+      404,
+      { message: `Note with id ${id} is not found` }
+    )
 
     return note
   }
